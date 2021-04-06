@@ -6,9 +6,11 @@ sbx_WGS is an extension for the sunbeam pipeline for de novo microbial genome as
 
 ### Installation
 1. Add packages in sbx_SPARCQ_env.yml to sunbeam environment.yml and install with your sunbeam's ./install.sh --update env
-2. To install QUAST in sunbeam environment (if you cannot install it in step #1), use your environment's pip to install quast
+2. If you cannot install it in step #1, use a combination of conda and pip:
 ```
-/path/to/miniconda3/envs/sunbeam/bin/pip install quast
+conda activate sunbeam
+conda install -c conda-forge bedtools spades checkm-genome ncbi-genome-download
+pip install quast
 (If installed this way, may need to change quast to quast.py in sbx_SPARCQ.rules)
 ```
 3. Add config.yml to sunbeam_config.yml
